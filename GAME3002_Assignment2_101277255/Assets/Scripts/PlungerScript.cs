@@ -6,7 +6,8 @@ public class PlungerScript : MonoBehaviour
 {
     SpringJoint plunger_spring;
     Rigidbody plunger_RB;
-    public Vector3 plunger_PosInit;
+    public Vector3 plunger_PosInit; //Initial position
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,14 +20,17 @@ public class PlungerScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            plunger_spring.spring = 100.0f;
-            plunger_RB.MovePosition(new Vector3(plunger_RB.position.x, plunger_RB.position.y, plunger_RB.position.z - 10));
+            plunger_RB.position = new Vector3(plunger_PosInit.x, plunger_PosInit.y, plunger_PosInit.z - 0.5f);
         }
+    }
 
-        //if (Mathf.Abs(plunger_RB.velocity.z) < 0.01f)
-        //{
-        //    plunger_RB.MovePosition(plunger_PosInit);
-        //}
-        print(plunger_RB.position);
+    //Reset plunger position after it hits the ball + not pushing when there is no ball
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "PinBall")
+        {
+            plunger_RB.MovePosition(plunger_PosInit);
+            print("ball");
+        }
     }
 }
