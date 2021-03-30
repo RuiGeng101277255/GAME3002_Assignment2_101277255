@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlungerScript : MonoBehaviour
 {
-    SpringJoint plunger_spring;
-    Rigidbody plunger_RB;
     public Vector3 plunger_PosInit; //Initial position
+
+    private SpringJoint plunger_spring;
+    private Rigidbody plunger_RB;
 
     // Start is called before the first frame update
     void Start()
@@ -18,9 +19,14 @@ public class PlungerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            plunger_RB.position = new Vector3(plunger_PosInit.x, plunger_PosInit.y, plunger_PosInit.z - 0.5f);
+            //Changing spring's position attached to the plunger
+            plunger_spring.transform.position = new Vector3(plunger_PosInit.x, plunger_PosInit.y, plunger_PosInit.z - 0.5f);
+            
+            //Alternative method to change the rigidbody to produce the same effect
+            //Since anchor and connected anchors are already set via the inspector section
+            //plunger_RB.position = new Vector3(plunger_PosInit.x, plunger_PosInit.y, plunger_PosInit.z - 0.5f);
         }
     }
 
@@ -30,7 +36,6 @@ public class PlungerScript : MonoBehaviour
         if(collision.gameObject.name == "PinBall")
         {
             plunger_RB.MovePosition(plunger_PosInit);
-            print("ball");
         }
     }
 }
