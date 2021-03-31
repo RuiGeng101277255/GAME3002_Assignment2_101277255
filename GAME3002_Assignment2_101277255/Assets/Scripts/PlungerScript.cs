@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlungerScript : MonoBehaviour
 {
     public Vector3 plunger_PosInit; //Initial position
+    public BallScript pinball;
 
     private SpringJoint plunger_spring;
     private Rigidbody plunger_RB;
+    private bool plunger_pulled = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +23,12 @@ public class PlungerScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            //Changing spring's position attached to the plunger
-            plunger_spring.transform.position = new Vector3(plunger_PosInit.x, plunger_PosInit.y, plunger_PosInit.z - 0.5f);
-            
-            //Alternative method to change the rigidbody to produce the same effect
-            //Since anchor and connected anchors are already set via the inspector section
-            //plunger_RB.position = new Vector3(plunger_PosInit.x, plunger_PosInit.y, plunger_PosInit.z - 0.5f);
+            plunger_RB.AddForce(new Vector3(0.0f, 0.0f, -1.0f) * 500.0f, ForceMode.Impulse);
+            plunger_pulled = true;
+        }
+        if (pinball.ball_launched)
+        {
+            plunger_pulled = false;
         }
     }
 
@@ -35,7 +37,12 @@ public class PlungerScript : MonoBehaviour
     {
         if(collision.gameObject.name == "PinBall")
         {
-            plunger_RB.MovePosition(plunger_PosInit);
+            if (plunger_pulled)
+            {
+                collision.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0.0f, 0.0f, 1.0f) * 2.5f, ForceMode.Impulse);
+                pinball.ball_launched = true;
+                plunger_pulled = false;
+            }
         }
     }
 }

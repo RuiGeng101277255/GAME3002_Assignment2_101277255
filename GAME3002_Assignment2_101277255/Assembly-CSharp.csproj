@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlungerScript.cs" />
     <Compile Include="Assets\Scripts\FlipperScript.cs" />
+    <Compile Include="Assets\Scripts\BallScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
