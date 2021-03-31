@@ -57,8 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlungerScript.cs" />
-    <Compile Include="Assets\Scripts\FlipperScript.cs" />
     <Compile Include="Assets\Scripts\BallScript.cs" />
+    <Compile Include="Assets\Scripts\FlipperScript.cs" />
+    <Compile Include="Assets\Scripts\BumperScript.cs" />
+    <Compile Include="Assets\Scripts\BashtoyScript.cs" />
+    <Compile Include="Assets\Scripts\ScoreScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

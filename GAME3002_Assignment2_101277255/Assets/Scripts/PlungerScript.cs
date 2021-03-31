@@ -24,19 +24,22 @@ public class PlungerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             plunger_RB.AddForce(new Vector3(0.0f, 0.0f, -1.0f) * 500.0f, ForceMode.Impulse);
-            plunger_pulled = true;
-        }
-        if (pinball.ball_launched)
-        {
-            plunger_pulled = false;
+
+            if (!pinball.ball_launched)
+            {
+                plunger_pulled = true;
+            }
         }
     }
-
-    //Reset plunger position after it hits the ball + not pushing when there is no ball
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.name == "PinBall")
         {
+            if (pinball.ball_launched)
+            {
+                pinball.ballReset();
+            }
+
             if (plunger_pulled)
             {
                 collision.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0.0f, 0.0f, 1.0f) * 2.5f, ForceMode.Impulse);
