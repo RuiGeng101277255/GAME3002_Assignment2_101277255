@@ -6,6 +6,7 @@ public class BashtoyScript : MonoBehaviour
 {
     public int BashtoyPoints;
     public GameObject bash_light;
+    public BallScript pinball;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class BashtoyScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         bash_light.GetComponent<Light>().color = Color.green;
+        pinball.addBallScore(BashtoyPoints);
     }
 
     private void OnCollisionExit(Collision collision)

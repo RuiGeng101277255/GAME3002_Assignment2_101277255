@@ -5,6 +5,8 @@ using UnityEngine;
 public class BumperScript : MonoBehaviour
 {
     public bool isPassive;
+    public int BumperScore;
+    public BallScript pinball;
 
     private CapsuleCollider bumperCollider;
     private MeshRenderer bumperRenderer;
@@ -46,6 +48,9 @@ public class BumperScript : MonoBehaviour
         {
             collision.gameObject.GetComponent<Rigidbody>().AddForce(-collision.contacts[0].normal, ForceMode.Impulse);
         }
+
+        //add score
+        pinball.addBallScore(BumperScore);
     }
 
     private void OnCollisionExit(Collision collision)
