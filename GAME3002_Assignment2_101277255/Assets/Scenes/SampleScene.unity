@@ -328,6 +328,8 @@ MonoBehaviour:
   Flipper_SpringDamp: 25
   Flipper_RotInit: 0
   Flipper_RotEnd: 90
+  flipper_Key: 107
+  isFlipperIndividual: 1
 --- !u!1 &71600192
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,7 +455,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80264169}
   m_LocalRotation: {x: -0.27059805, y: -0.27059805, z: 0.6532815, w: 0.6532815}
-  m_LocalPosition: {x: 3.5, y: 7, z: -6}
+  m_LocalPosition: {x: -1.15, y: 7, z: -6}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 316941363}
@@ -475,6 +477,8 @@ MonoBehaviour:
   Flipper_SpringDamp: 25
   Flipper_RotInit: 0
   Flipper_RotEnd: -90
+  flipper_Key: 104
+  isFlipperIndividual: 1
 --- !u!59 &80264172
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -487,7 +491,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.5, z: 0.5}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.7380171, y: 0.28616285, z: -4.963043}
+  m_ConnectedAnchor: {x: -3.911983, y: 0.28616285, z: -4.963043}
   m_UseSpring: 1
   m_Spring:
     spring: 0
@@ -1056,6 +1060,7 @@ GameObject:
   - component: {fileID: 267579764}
   - component: {fileID: 267579763}
   - component: {fileID: 267579765}
+  - component: {fileID: 267579769}
   m_Layer: 0
   m_Name: Plunger
   m_TagString: Untagged
@@ -1195,6 +1200,68 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267579761}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!108 &267579769
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267579761}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &316941362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,7 +1676,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410553233}
   m_LocalRotation: {x: 0.27059805, y: 0.27059805, z: 0.6532815, w: 0.6532815}
-  m_LocalPosition: {x: 0.05, y: 7, z: -6}
+  m_LocalPosition: {x: 5, y: 7, z: -6}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 316941363}
@@ -1631,6 +1698,8 @@ MonoBehaviour:
   Flipper_SpringDamp: 25
   Flipper_RotInit: 0
   Flipper_RotEnd: 90
+  flipper_Key: 108
+  isFlipperIndividual: 1
 --- !u!59 &410553236
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -1643,7 +1712,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.5, z: 0.5}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -2.0048761, y: 0.28616285, z: -4.7862663}
+  m_ConnectedAnchor: {x: 2.9451237, y: 0.28616285, z: -4.7862663}
   m_UseSpring: 1
   m_Spring:
     spring: 0
@@ -1771,7 +1840,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484540208}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -8.125, y: 1.75, z: 5}
+  m_LocalPosition: {x: -8.125, y: 1.75, z: 7}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 990346298}
@@ -2755,7 +2824,7 @@ GameObject:
   m_Component:
   - component: {fileID: 990346298}
   m_Layer: 0
-  m_Name: UI/Score
+  m_Name: UI/Score_Tablet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2923,7 +2992,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155471130}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -7, y: 1.75, z: 3}
+  m_LocalPosition: {x: -7, y: 1.75, z: 4.75}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 990346298}
@@ -3032,8 +3101,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244526347}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -8, y: 1.75, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.25}
+  m_LocalPosition: {x: -8.5, y: 1.75, z: 2.5}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_Children: []
   m_Father: {fileID: 990346298}
   m_RootOrder: 4
@@ -3046,30 +3115,17 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244526347}
-  m_Text: 'Instruction:
-
-
-    Space - Trigger Flippers
-
-    P - Plunger Push
-
-    R
-    - Reset PinBall
-
-
-    Default automatic resets
-
-    on collision with
-
-    endzone
-    (pinball script)'
+  m_Text: "H,J,K,L - Trigger\nIndividual Flippers\nSpace - Plunger Push\nR - Reset
+    PinBall\n\nHold Space for more Plunger \npower turns green at max\n\nCheck isFlipperIndividual\nto
+    control all selected \nflippers with F key\n\nDefault automatic resets\non collision
+    with\nendzone (pinball script)"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 32
+  m_FontSize: 64
   m_FontStyle: 1
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -3822,6 +3878,8 @@ MonoBehaviour:
   Flipper_SpringDamp: 25
   Flipper_RotInit: 0
   Flipper_RotEnd: -90
+  flipper_Key: 106
+  isFlipperIndividual: 1
 --- !u!1 &1609862286
 GameObject:
   m_ObjectHideFlags: 0
